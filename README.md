@@ -1,18 +1,18 @@
 In 🇺🇸
 
 - 👋 Hi, I’m @BrunoDelfim .
-- 💪 I'm interested in anything that can bring me knowledge.
-- 👨‍💻 At the moment I am improving my knowledge in front-end 🌱, focusing mainly on improving my knowledge in CSS and JavaScript.
-- 💁 I try to collaborate in everything I can. 
-- 📫 If you want to contact me, just send_me_a_message_on_linkedin: {user="brunordelfim"} or send_an_e-mail_to: {brn.dfm@gmail.com}.
+💪 I’m always interested in contributing to new projects and acquiring skills to become a better professional.
+👨‍💻 Currently, I work as a web developer analyst at a company that specializes in public management solutions 🌱. My main tools are Laravel, Vue.js, JavaScript, SQL, Docker, and Git.
+💁 I’m eager to collaborate in every way I can and to learn what I don’t know yet.
+📫 If you'd like to get in touch, feel free to send me a message on LinkedIn: brunordelfim or an email at brn.dfm@gmail.com.
 
 Em 🇧🇷
 
 - 👋 Oi, eu sou @BrunoDelfim
-- 💪 Estou interessado em qualquer coisa que possa me trazer conhecimento.
-- 👨‍💻 No momento estou aprimorando meus conhecimentos em front-end 🌱, focando principalmente em aprimorar meus conhecimentos em CSS e JavaScript.
-- 💁 Procuro colaborar em tudo que posso.
-- 📫 Se você quiser entrar em contato comigo, basta me enviar_uma_mensagem_no_linkedin: {usuário="brunordelfim"} ou enviar_um_e-mail_para: {brn.dfm@gmail.com}.
+💪 Estou sempre interessado em contribuir para novos projetos e adquirir habilidades que me tornem um profissional ainda melhor.
+👨‍💻 Atualmente, trabalho como analista desenvolvedor web em uma empresa especializada em soluções para gestão pública 🌱. Utilizo principalmente Laravel, Vue.js, JavaScript, SQL, Docker e Git no meu dia a dia.
+💁 Estou sempre disposto a colaborar no que for possível e a aprender o que ainda não domino.
+📫 Caso queira entrar em contato comigo, envie uma mensagem pelo LinkedIn: brunordelfim ou um e-mail para brn.dfm@gmail.com.
 
 
 <!---
