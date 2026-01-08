@@ -1,9 +1,23 @@
 🇺🇸
 
--👋 Hi, I’m @BrunoDelfim.
-💪 I’m always interested in contributing to new projects and acquiring skills to become a better professional. 👨‍💻 Currently, I work as a full-stack web developer at a company that specializes in public management solutions 🌱. My main tools are Laravel, Vue.js, JavaScript, SQL, Docker, and Git. 💁 I’m eager to collaborate in every way I can and to learn what I don’t know yet. 📫 If you'd like to get in touch, feel free to send me a message on LinkedIn: brunordelfim or an email at brn.dfm@gmail.com.
+-👋 Olá, sou @BrunoDelfim.
+💪 Estou sempre interessado em contribuir para novos projetos e adquirir habilidades para me tornar um professor melhor. 👨‍💻 Atualmente, trabalho como desenvolvedor web full-stack em uma empresa especializada em soluções de gestão pública 🌱. Minhas principais ferramentas são Laravel, Vue.js, JavaScript, SQL, Docker e Git. 💁 Estou ansioso para colaborar de todas as maneiras que puder e aprender o que ainda não sei. 📫 Se você quer entrar em contato, fique à vontade para me enviar uma mensagem no LinkedIn: brunordelfim ou um e-mail para brn.dfm@gmail.com.
 
 🇧🇷
 
--👋 Oi, eu sou @BrunoDelfim.
-💪 Estou sempre interessado em contribuir para novos projetos e adquirir habilidades que me tornem um profissional ainda melhor. 👨‍💻 Atualmente, trabalho como desenvolvedor web pleno em uma empresa especializada em soluções para gestão pública 🌱. Utilizo principalmente Laravel, Vue.js, JavaScript, SQL, Docker e Git no meu dia a dia. 💁 Estou sempre disposto a colaborar no que for possível e a aprender o que ainda não domino. 📫 Caso queira entrar em contato comigo, envie uma mensagem pelo LinkedIn: brunordelfim ou um e-mail para brn.dfm@gmail.com.
+👋 Olá, eu sou Bruno Delfim.
+
+Sou Desenvolvedor Full Stack com foco em aplicações web, atuando principalmente com PHP e Laravel no backend e JavaScript/TypeScript com Vue.js e React no frontend.
+
+Tenho experiência no desenvolvimento de APIs REST, integração com bancos de dados relacionais (SQL), autenticação, autorização e implementação de regras de negócio, sempre com atenção à arquitetura, performance, segurança e manutenibilidade.
+
+Atuo com autonomia na análise, desenvolvimento e evolução de funcionalidades, incluindo manutenção de sistemas legados, além de participação ativa em decisões técnicas, code review e organização do código.
+
+No dia a dia, trabalho com Laravel, Vue.js, JavaScript/TypeScript, MySQL/PostgreSQL, Git, Docker e práticas de desenvolvimento colaborativo, utilizando metodologias ágeis e fluxos de entrega contínua.
+
+Tenho facilidade para aprender novas tecnologias, me adaptar a diferentes contextos de projeto e contribuir para soluções escaláveis e bem estruturadas.
+
+📫 Contato:
+LinkedIn: linkedin.com/in/brunordelfim  
+E-mail: brn.dfm@gmail.com
+
