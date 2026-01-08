@@ -19,18 +19,18 @@ E-mail: brn.dfm@gmail.com
 
 🇺🇸
 
-👋 Olá, sou Bruno Delfim.
+👋 Hi, I’m Bruno Delfim.
 
-Sou um desenvolvedor Full Stack focado em aplicativos web, trabalhando principalmente com PHP e Laravel sem backend e JavaScript/TypeScript com Vue.js e React sem frontend.
+I’m a Full Stack Developer focused on web applications, working mainly with PHP and Laravel on the backend and JavaScript/TypeScript with Vue.js and React on the frontend.
 
-Tendo experiência na criação de APIs REST, integração de bancos de dados relacionais (SQL), implementação de autenticação e autorização e desenvolvimento de registros de negócios com grande atenção à arquitetura, desenvolvimento, segurança e manutenibilidade.
+I have experience building REST APIs, integrating relational databases (SQL), implementing authentication and authorization, and developing business rules with strong attention to architecture, performance, security, and maintainability.
 
-Trabalho de forma autônoma na análise, desenvolvimento e evolução de recursos, incluindo a manutenção de sistemas legados, e contribuo ativamente para decisões técnicas, revisões de código e organização de código.
+I work autonomously on the analysis, development, and evolution of features, including maintaining legacy systems, and I actively contribute to technical decisions, code reviews, and code organization.
 
-Diariamente, trabalho com Laravel, Vue.js, JavaScript/TypeScript, MySQL/PostgreSQL, Git, Docker e práticas de desenvolvimento colaborativo, seguindo metodologias ágeis e fluxos de trabalho de entrega contínua.
+On a daily basis, I work with Laravel, Vue.js, JavaScript/TypeScript, MySQL/PostgreSQL, Git, Docker, and collaborative development practices, following agile methodologies and continuous delivery workflows.
 
-Adapto-me rapidamente às novas tecnologias e contextos de projetos e gosto de contribuir para soluções escaláveis e bem estruturadas.
+I adapt quickly to new technologies and project contexts and enjoy contributing to scalable, well-structured solutions.
 
-📫 Contato:
+📫 Contact:
 LinkedIn: linkedin.com/in/brunordelfim  
-E-mail: brn.dfm@gmail.com
+Email: brn.dfm@gmail.com
