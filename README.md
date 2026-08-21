@@ -398,5 +398,6 @@ font that *does* declare a reserved name, you must rename it.
 
 ## Licence
 
-MIT for the code. The font keeps its own OFL, which is not the same licence and
-does not become MIT by sitting in this repository.
+MIT for the code — see [LICENSE](LICENSE). The font keeps its own OFL, which is
+not the same licence and does not become MIT by sitting in this repository; the
+details are in [NOTICE](NOTICE).
