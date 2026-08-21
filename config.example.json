@@ -64,7 +64,67 @@
 
   "activity": { "types": ["pr", "release", "review", "issue", "ref/create", "public", "fork"], "limit": 5, "days": 120 },
 
-  "display": { "text": "PIXEL", "treatment": "hollow", "colour": "ink", "sweep": true },
+  "display": { "text": "PIXEL PANELS", "treatment": "hollow", "colour": "ink", "sweep": true, "sweepPeriod": 4600 },
+
+  "terminal": {
+    "title": "build",
+    "meta": "node 22",
+    "prompt": "$",
+    "lines": [
+      "$ node scripts/build-preview.mjs",
+      "  hero              5.1 kB",
+      "  contributions    18.4 kB",
+      "  gauge             7.2 kB",
+      "  40 file(s) -> preview/",
+      "$ "
+    ]
+  },
+
+  "timeline": [
+    { "when": "AUG 2026", "what": "Twenty components, one grid", "note": "v1.1.0" },
+    { "when": "JUL 2026", "what": "Lifted out of a profile README and documented", "note": "v1.0.0" },
+    { "when": "JUN 2026", "what": "The 6% sizing rule, after everything collided", "note": "" },
+    { "when": "MAY 2026", "what": "First panel: a bitmap face and a 2px border", "note": "" }
+  ],
+
+  "progress": [
+    { "label": "COMPONENTS", "pct": 100 },
+    { "label": "DOCUMENTED", "pct": 100 },
+    { "label": "PHONE LAYOUTS", "pct": 92 },
+    { "label": "REDUCED MOTION", "pct": 100 },
+    { "label": "TESTS", "pct": 45 }
+  ],
+
+  "gauge": [
+    { "label": "COLOUR BUDGET", "value": 19, "max": 100, "display": "19%", "maxLabel": "100", "note": "blue, against a 20% ceiling" },
+    { "label": "PAGE WEIGHT", "value": 214, "max": 500, "display": "214", "maxLabel": "500", "note": "kB of SVG, whole gallery" }
+  ],
+
+  "ticker": {
+    "sep": "//",
+    "items": [
+      "No build step",
+      "No runtime",
+      "No package manager",
+      "One 2px grid",
+      "One embedded face",
+      "Both themes in every file"
+    ]
+  },
+
+  "table": {
+    "title": "sizes",
+    "meta": "measured",
+    "head": ["WHERE", "WIDTH", "TYPE", "SHARE"],
+    "align": ["start", "end", "end", "end"],
+    "rows": [
+      ["Profile README column", "831 px", "11 px", "1.3%"],
+      ["Full panel", "820 px", "11 px", "1.3%"],
+      ["Half panel", "404 px", "22 px", "5.4%"],
+      ["Readout cell", "208 px", "11 px", "5.3%"],
+      ["Phone column", "284 px", "11 px", "3.9%"]
+    ]
+  },
 
   "tiles": [
     { "label": "SHIPPED", "value": "4 tools", "note": "MIT" },
@@ -110,6 +170,12 @@
     "fortune": true,
     "display": true,
     "tiles": true,
-    "quote": true
+    "quote": true,
+    "terminal": true,
+    "timeline": true,
+    "progress": true,
+    "gauge": true,
+    "ticker": true,
+    "table": true
   }
 }

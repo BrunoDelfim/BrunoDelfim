@@ -12,18 +12,24 @@
 
 <picture>
   <source media="(max-width: 500px)" srcset="preview/display-m.svg">
-  <img alt="PIXEL, set as a large hollow pixel headline" src="preview/display.svg">
+  <img alt="PIXEL PANELS, set as a large hollow pixel headline with a scan crossing the letterforms" src="preview/display.svg">
 </picture>
 
 </div>
 
-**Pixel panels for a GitHub profile README.** Fourteen SVG components — meters,
-a contribution field, project cards, a contact row — built from one bitmap
-typeface and one 2px grid, so a page made of them looks like a single instrument
-rather than a shelf of widgets.
+**Pixel panels for a GitHub profile README.** Twenty SVG components — meters,
+dials, a contribution field, project cards, a transcript, a contact row — built
+from one bitmap typeface and one 2px grid, so a page made of them looks like a
+single instrument rather than a shelf of widgets.
 
 No build step, no package manager, no runtime. `node` and `git` are the whole
 toolchain. Every component is a function that returns a string.
+
+**Every panel carries both palettes and follows your system theme.** They were
+drawn in dark and then made to work in light, and it shows — if you are reading
+this in light mode you are seeing the second-best version of it. There is a
+[side-by-side](#both-palettes-one-file) further down, and your theme switch on
+this page is the real demonstration.
 
 <picture>
   <source media="(max-width: 500px)" srcset="preview/hero-m.svg">
@@ -54,7 +60,34 @@ Three properties that turned out to matter more than they sound:
 - **Motion never hides content.** Every effect animates `transform` only. An
   `<img>`-loaded SVG does not reliably start its animations, and an effect that
   begins at `opacity: 0` can leave a panel permanently blank — this was found
-  the hard way.
+  the hard way. The same trap has a quieter form: an entrance that starts at
+  40% scale leaves the element at 40% until it runs, which is invisible on a
+  heat cell and turns a dial into a ring of dots. Ask what the `from` state
+  looks like, because that is a state real readers will see.
+
+---
+
+## Both palettes, one file
+
+The same panel, with its theme pinned so you can see the one you are not in:
+
+<img alt="The language share bar in the light palette" src="preview/theme-light.svg">
+
+<img alt="The same panel in the dark palette, where the data ramp climbs toward light instead of away from it" src="preview/theme-dark.svg">
+
+These two are the only files in the gallery that ignore your setting; every
+other one follows it. They exist because half the design is otherwise
+unreachable — a reader in light mode has no way to look at the dark palette,
+and dark is the one these were drawn for.
+
+They are also not inversions of each other, which is the part worth looking at.
+The data ramp climbs **toward light** on a dark page and **toward dark** on a
+light one, so "more" is always further from the background rather than always
+brighter. Inverting a dark ramp gives you a light theme whose largest value is
+its palest colour, which is the wrong way round and the usual reason a light
+mode looks washed out. Borders, the panel fill and the shadow are each picked
+per theme for the same reason — the shadow is black on dark and a cool grey on
+light, because black on white is a hole rather than a shadow.
 
 ---
 
@@ -184,6 +217,52 @@ usually measuring build output.
 
 Expects `{ top: [{ name, pct, amount }], repoCount, caption, summary, note }`.
 
+### progress — bars for things that are partly done
+
+<picture>
+  <source media="(max-width: 500px)" srcset="preview/progress-m.svg">
+  <img alt="Five labelled progress bars drawn as segmented cells" src="preview/progress.svg">
+</picture>
+
+The whole scale is always drawn and the unfilled cells keep their own colour,
+so you can count what is left — "45%" is a number, eleven empty cells is a
+quantity. Percentages round to the nearest cell and nothing finer: a bar whose
+last cell is half-lit is claiming a precision the grid cannot carry.
+
+One label column and one number column for the entire panel, not per row. Bars
+that each start somewhere else cannot be compared by eye, which is the only
+reason to draw them as bars.
+
+```json
+"progress": [{ "label": "TESTS", "pct": 45 }]
+```
+
+### gauge — a dial made of right angles
+
+<picture>
+  <source media="(max-width: 500px)" srcset="preview/gauge-m.svg">
+  <img alt="Two dials, each a stepped semicircular arc with a reading beside it" src="preview/gauge.svg">
+</picture>
+
+The one shape a pixel system is supposed to be bad at. Twenty-one blocks placed
+on a semicircle and snapped to the grid **after** the trigonometry, never
+before — left on their exact positions they land on fractions, the renderer
+antialiases them, and the arc becomes a soft grey smear.
+
+No needle. A line from the centre is a diagonal, and a grid draws a diagonal as
+a staircase that reads as a mistake rather than as a style; the reading is
+marked by one oversized block on the arc instead. Dial left, number right,
+because a 400px tile with a dial centred in it is mostly empty tile.
+
+This one also has no entrance animation, which was not the original plan. The
+arc used to assemble itself with `bloom` — and `bloom` rests at 40% scale until
+it runs, so a render that caught it early showed the dial as a ring of 2px
+dots. A heat cell survives being scaled down. An instrument does not.
+
+```json
+"gauge": [{ "label": "PAGE WEIGHT", "value": 214, "max": 500, "display": "214" }]
+```
+
 ### stars and activity — two lists
 
 <picture><source media="(max-width: 500px)" srcset="preview/stars-m.svg"><img alt="Recently starred repositories, with a rail marking one row" src="preview/stars.svg"></picture>
@@ -197,6 +276,28 @@ could never be aligned, because a free-floating pointer has no structural anchor
 
 Three inks per row and no more: the name carries the blue, the description is
 the one grey, everything subordinate is faint.
+
+### timeline — dated entries on a rail
+
+<picture>
+  <source media="(max-width: 500px)" srcset="preview/timeline-m.svg">
+  <img alt="Four dated milestones hung off a vertical rail" src="preview/timeline.svg">
+</picture>
+
+The same rail the two list panels use, turned on its end into a spine. A
+milestone list drawn as bullets has to imply a relationship between its rows; a
+rail states one, because the rail is continuous and the nodes are on it. It
+stops at the last node — a rail that overshoots its own contents is decoration
+wearing structure's clothes.
+
+Every node is the same size, including the newest. Scaling the most recent
+entry is the standard move and it says "this one matters more" when what is
+actually true is "this one happened last", which the date column already said.
+A block runs down the rail, so the motion never crosses a word.
+
+```json
+"timeline": [{ "when": "AUG 2026", "what": "…", "note": "v1.1.0" }]
+```
 
 ### contributions — a year as a field
 
@@ -253,16 +354,101 @@ it is on the anti-AI-taste list for exactly that reason.
 "quote": { "text": "…", "by": "…" }
 ```
 
-### display — oversized pixel headline
+### terminal — a session transcript
 
-Shown at the top. Three treatments — `solid`, `hollow`, `shadow`. Hollow is a
-stroke on a bitmap face, which traces every step in the glyph; that is why it
-reads as pixel art rather than as an outlined font. Sizes are 33 / 44 / 55,
-picked from the text length, because the face is drawn on an 11-pixel em and
-anything between those puts glyph edges on fractions.
+<picture>
+  <source media="(max-width: 500px)" srcset="preview/terminal-m.svg">
+  <img alt="A short shell transcript with a blinking caret" src="preview/terminal.svg">
+</picture>
+
+The one panel allowed to look like a terminal, so none of the others have to. A
+README that wants to show what running the thing looks like otherwise reaches
+for a fenced code block, which arrives wearing GitHub's type, GitHub's
+background and GitHub's corner radius, and puts a foreign object in the middle
+of the page.
+
+Two inks and no more: a line starting with the prompt is a command and takes
+the accent, everything else is output and takes the one grey. A transcript with
+four colours in it is a screenshot of somebody's colour scheme. A band drifts
+down the panel — the idiom this component is borrowing from anyway.
 
 ```json
-"display": { "text": "PIXEL", "treatment": "hollow", "colour": "ink", "sweep": true }
+"terminal": { "title": "build", "prompt": "$", "lines": ["$ node …", "  40 file(s)"] }
+```
+
+### table — rows and columns on the grid
+
+<picture>
+  <source media="(max-width: 500px)" srcset="preview/table-m.svg">
+  <img alt="A five-row table with a header rule and alternating row bands" src="preview/table.svg">
+</picture>
+
+Column widths are measured rather than guessed, which a monospaced face makes
+exact: the width of a string is its length times a known advance. Nothing has
+to be estimated and nothing is clipped "just in case" — and when the columns do
+overrun, the first one gives up the difference, because it holds the names and
+names are the only cells that survive being cut.
+
+No vertical rules. At this density they collide with the type on every row, and
+the gutters have already separated the columns. The field cursor rides the
+header rule for the same reason: the first version stepped a full-height line
+across the table and read as a misplaced border — the exact rule the panel
+refuses to draw, reintroduced as an animation.
+
+```json
+"table": { "head": ["WHERE", "WIDTH"], "align": ["start", "end"], "rows": [["…", "831 px"]] }
+```
+
+### ticker — a strip crawling past
+
+<picture>
+  <source media="(max-width: 500px)" srcset="preview/ticker-m.svg">
+  <img alt="A single-line strip of short phrases separated by slashes" src="preview/ticker.svg">
+</picture>
+
+The one place content itself is allowed to move, because here the component
+*is* the motion. The loop is seamless because the strip carries its content
+twice and travels exactly one copy's width, so the reset lands on an identical
+frame; any other distance produces a visible jump, and a marquee that jumps is
+worse than no marquee.
+
+Speed comes from length, not from a fixed duration — three items and nine both
+travel at the same pixels per second. Fix the duration instead and a long strip
+is a blur while a short one crawls.
+
+```json
+"ticker": { "sep": "//", "items": ["No build step", "No runtime"] }
+```
+
+### display — oversized pixel headline
+
+Shown at the top, where it is this repository's wordmark. Three treatments —
+`solid`, `hollow`, `shadow`. Hollow is a stroke on a bitmap face, which traces
+every step in the glyph; that is why it reads as pixel art rather than as an
+outlined font. Sizes are 33 / 44 / 55 and nothing between, because the face is
+drawn on an 11-pixel em and anything else puts glyph edges on fractions. A
+phrase too long for one line at 33 is set one word per line instead of being
+shrunk off the list — a two-line lockup is a normal thing for a wordmark to be,
+where a headline at 27px is just a blurry headline.
+
+**The scan is masked by the letterforms.** The first version slid an accent bar
+across the word on top of it: a rectangle with no relationship to the glyphs it
+was crossing, which is exactly what it looked like. This one exists only inside
+the letters, so the word fills in ahead of the head and empties out behind it,
+the way a character-cell display paints. It advances in whole font-pixels via
+`steps()`, so the leading edge always lands on a glyph edge rather than halfway
+through one, and the head is three units of solid accent followed by two dimmer
+columns — a phosphor tail, not a gradient.
+
+Two details in the markup are load-bearing and easy to get wrong. The mask
+region is declared `userSpaceOnUse`; left at the default it resolves against
+the bounding box of the element referencing it, which is the moving band, so
+the band carries its own mask along and never appears to move. And the animated
+group is nested *inside* the masked one, because a transform applies to an
+element's mask as well as to the element.
+
+```json
+"display": { "text": "PIXEL PANELS", "treatment": "hollow", "colour": "ink", "sweep": true, "sweepPeriod": 4600 }
 ```
 
 ### contact — keycap buttons
@@ -377,7 +563,8 @@ In `scripts/lib/design.mjs`:
 
 In `scripts/lib/motion.mjs` — entrances (`rise`, `grow`, `fill`, `draw`, `bloom`)
 and ambient loops (`lamp`, `tick`, `stream`, `playhead`, `cursor`, `flicker`,
-`ants`, `nudge`, `wave`, `pixelWave`, `keylight`, `rowlight`, `tape`). Each is
+`ants`, `nudge`, `wave`, `pixelWave`, `keylight`, `rowlight`, `tape`, `march`,
+`scanline`, `belt`). Each is
 switchable per component in config, and every animated document carries a
 `prefers-reduced-motion` guard.
 

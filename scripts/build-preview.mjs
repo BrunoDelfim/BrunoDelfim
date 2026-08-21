@@ -13,7 +13,7 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises"
 import { fileURLToPath } from "node:url"
 import { dirname, resolve } from "node:path"
 
-import { THEME } from "./lib/design.mjs"
+import { THEME, svgDoc, SHADOW } from "./lib/design.mjs"
 import { DEMO } from "./demo.mjs"
 
 import * as hero from "./panels/hero.mjs"
@@ -30,11 +30,20 @@ import * as display from "./panels/display.mjs"
 import * as tiles from "./panels/tiles.mjs"
 import * as quote from "./panels/quote.mjs"
 import * as contact from "./panels/contact.mjs"
+import * as terminal from "./panels/terminal.mjs"
+import * as timeline from "./panels/timeline.mjs"
+import * as progress from "./panels/progress.mjs"
+import * as gauge from "./panels/gauge.mjs"
+import * as ticker from "./panels/ticker.mjs"
+import * as table from "./panels/table.mjs"
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const OUT = resolve(ROOT, "preview")
 
-const SINGLE = [hero, about, rhythm, languages, stars, activity, contributions, fortune, display, tiles, quote]
+const SINGLE = [
+  hero, about, rhythm, languages, stars, activity, contributions, fortune,
+  display, tiles, quote, terminal, timeline, progress, gauge, ticker, table,
+]
 const MULTI = [sections, work, contact]
 
 const VARIANTS = [
@@ -69,6 +78,29 @@ for (const mod of MULTI) {
   }
   console.log(`  ${mod.id.padEnd(15)}          ${n} file(s)`)
 }
+
+/**
+ * The theme pair.
+ *
+ * Every other file in preview/ follows the reader's own setting, which is the
+ * correct behaviour and also means half the design is unreachable: somebody
+ * reading this in light mode has no way to see the dark palette, and dark is
+ * the one these were drawn for. So the same panel is rendered twice more with
+ * its theme pinned, purely so the two can sit side by side in the README.
+ *
+ * `languages` is the panel that shows it best. The two palettes are not
+ * inversions of each other — the data ramp climbs toward light on a dark page
+ * and toward dark on a light one — and a four-step ramp is where that is
+ * visible rather than merely true.
+ */
+for (const force of ["light", "dark"]) {
+  const r = languages.render(THEME, DEMO, cfg, { mobile: false })
+  const svg = svgDoc({ w: r.w, h: r.h, theme: THEME, body: r.body, css: r.css, bleed: SHADOW, force,
+    title: `The same panel with its theme pinned to ${force}` })
+  await writeFile(resolve(OUT, `theme-${force}.svg`), svg, "utf8")
+  written++
+}
+console.log(`  ${"themes".padEnd(15)}          2 file(s)`)
 
 console.log(`\n${written} file(s) -> preview/`)
 
