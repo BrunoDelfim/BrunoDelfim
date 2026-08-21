@@ -1,0 +1,115 @@
+{
+  "_note": "Everything a panel says lives here. Copy this to config.json, replace the values, and no component code has to be touched. The previews in the README are built from exactly this file plus scripts/demo.mjs.",
+
+  "sections": [
+    { "key": "01", "num": "01", "title": "About me" },
+    { "key": "02", "num": "02", "title": "Selected work", "sub": "Things I wanted to exist, so I built them." },
+    { "key": "03", "num": "03", "title": "How I work", "sub": "Where the hours go, and what the code is made of." }
+  ],
+
+  "hero": {
+    "lines": [
+      "Building small tools that do one thing exactly.",
+      "Turning messy ideas into systems that actually run.",
+      "Always building something I wish already existed."
+    ]
+  },
+
+  "about": {
+    "name": "Sam Rivera",
+    "meta": "demo profile",
+    "paragraphs": [
+      "I build developer tools and the odd piece of creative software — mostly around making a complicated thing legible before making it faster.",
+      "Away from the editor: film photography, long walks, and whatever I am curious about next."
+    ]
+  },
+
+  "exploring": ["Local-first software", "Type systems", "Data visualisation", "Bitmap type"],
+
+  "principles": [
+    "Human judgment stays in the loop.",
+    "Build the tool you keep wishing existed."
+  ],
+
+  "work": [
+    {
+      "key": "plotter",
+      "name": "Plotter",
+      "why": "A stream of measurements is not information until something shapes it. This reads a live feed and draws the one chart that answers the question you actually had.",
+      "tags": ["Rust", "wgpu", "CLI", "Local-first"],
+      "url": "https://github.com/acme/plotter"
+    },
+    {
+      "key": "tinyfs",
+      "name": "TinyFS",
+      "why": "Most filesystems are too large to learn from. This one is small enough to read in an afternoon and still correct enough to trust with real files.",
+      "tags": ["C", "POSIX", "Fuzzed", "MIT"],
+      "url": "https://github.com/hollowlab/tinyfs"
+    },
+    {
+      "key": "ledger",
+      "name": "Ledger",
+      "why": "Plain-text accounting with no opinions about your money — it records what you tell it and refuses to guess the rest.",
+      "tags": ["Python", "Plain text", "No server"],
+      "url": "https://github.com/quiet-tools/ledger"
+    },
+    {
+      "key": "signal-desk",
+      "name": "Signal Desk",
+      "why": "Notifications arrive faster than anyone can read them. This collapses a day of them into the handful that changed something.",
+      "tags": ["TypeScript", "SQLite", "Desktop"],
+      "url": "https://github.com/acme/signal-desk"
+    }
+  ],
+
+  "activity": { "types": ["pr", "release", "review", "issue", "ref/create", "public", "fork"], "limit": 5, "days": 120 },
+
+  "display": { "text": "PIXEL", "treatment": "hollow", "colour": "ink", "sweep": true },
+
+  "tiles": [
+    { "label": "SHIPPED", "value": "4 tools", "note": "MIT" },
+    { "label": "OBSERVED", "value": "28 days" },
+    { "label": "PEAK", "value": "29", "note": "Aug 14" },
+    { "label": "STREAK", "value": "11 days" }
+  ],
+
+  "quote": {
+    "text": "A model can hold the context. It cannot hold the responsibility.",
+    "by": "the reason for the loop"
+  },
+
+  "contact": [
+    { "key": "email", "label": "EMAIL", "href": "mailto:you@example.com", "enabled": true },
+    { "key": "site", "label": "WEBSITE", "href": "https://example.com", "enabled": true },
+    { "key": "mastodon", "label": "MASTODON", "href": "https://example.social/@you", "enabled": true }
+  ],
+
+  "fortunes": [
+    "The tool you keep meaning to build is the one you need most.",
+    "A system nobody can explain is a system nobody can fix.",
+    "Good defaults beat good documentation.",
+    "Name it badly and you will build it badly.",
+    "Two hours of naming things saves two weeks of explaining them."
+  ],
+
+  "_motionNote": "Per-component switches. `ambient: false` keeps entrances but stops the never-ending effects; `enabled: false` makes everything static. No effect may start from opacity 0 — see scripts/lib/motion.mjs for why.",
+  "motion": {
+    "enabled": true,
+    "ambient": true,
+    "hero": true,
+    "about": true,
+    "sections": true,
+    "work": true,
+    "rhythm": true,
+    "languages": true,
+    "stars": true,
+    "activity": true,
+    "contributions": true,
+    "contributionStyle": "pixel",
+    "contributionPeriod": 3000,
+    "fortune": true,
+    "display": true,
+    "tiles": true,
+    "quote": true
+  }
+}

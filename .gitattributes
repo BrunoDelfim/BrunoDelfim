@@ -1,0 +1,4 @@
+# Previews are regenerated wholesale, so a line-by-line merge of two builds is
+# never meaningful. A conflict here means "pick a build".
+preview/*.svg -merge -diff
+assets/fonts/*.woff2 binary
