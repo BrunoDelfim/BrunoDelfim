@@ -1,0 +1,181 @@
+{
+  "_note": "Everything a panel says lives here. Copy this to config.json, replace the values, and no component code has to be touched. The previews in the README are built from exactly this file plus scripts/demo.mjs.",
+
+  "sections": [
+    { "key": "01", "num": "01", "title": "About me" },
+    { "key": "02", "num": "02", "title": "Selected work", "sub": "Things I wanted to exist, so I built them." },
+    { "key": "03", "num": "03", "title": "How I work", "sub": "Where the hours go, and what the code is made of." }
+  ],
+
+  "hero": {
+    "lines": [
+      "Building small tools that do one thing exactly.",
+      "Turning messy ideas into systems that actually run.",
+      "Always building something I wish already existed."
+    ]
+  },
+
+  "about": {
+    "name": "Sam Rivera",
+    "meta": "demo profile",
+    "paragraphs": [
+      "I build developer tools and the odd piece of creative software — mostly around making a complicated thing legible before making it faster.",
+      "Away from the editor: film photography, long walks, and whatever I am curious about next."
+    ]
+  },
+
+  "exploring": ["Local-first software", "Type systems", "Data visualisation", "Bitmap type"],
+
+  "principles": [
+    "Human judgment stays in the loop.",
+    "Build the tool you keep wishing existed."
+  ],
+
+  "work": [
+    {
+      "key": "plotter",
+      "name": "Plotter",
+      "why": "A stream of measurements is not information until something shapes it. This reads a live feed and draws the one chart that answers the question you actually had.",
+      "tags": ["Rust", "wgpu", "CLI", "Local-first"],
+      "url": "https://github.com/acme/plotter"
+    },
+    {
+      "key": "tinyfs",
+      "name": "TinyFS",
+      "why": "Most filesystems are too large to learn from. This one is small enough to read in an afternoon and still correct enough to trust with real files.",
+      "tags": ["C", "POSIX", "Fuzzed", "MIT"],
+      "url": "https://github.com/hollowlab/tinyfs"
+    },
+    {
+      "key": "ledger",
+      "name": "Ledger",
+      "why": "Plain-text accounting with no opinions about your money — it records what you tell it and refuses to guess the rest.",
+      "tags": ["Python", "Plain text", "No server"],
+      "url": "https://github.com/quiet-tools/ledger"
+    },
+    {
+      "key": "signal-desk",
+      "name": "Signal Desk",
+      "why": "Notifications arrive faster than anyone can read them. This collapses a day of them into the handful that changed something.",
+      "tags": ["TypeScript", "SQLite", "Desktop"],
+      "url": "https://github.com/acme/signal-desk"
+    }
+  ],
+
+  "activity": { "types": ["pr", "release", "review", "issue", "ref/create", "public", "fork"], "limit": 5, "days": 120 },
+
+  "display": { "text": "PIXEL PANELS", "treatment": "hollow", "colour": "ink", "sweep": true, "sweepPeriod": 4600 },
+
+  "terminal": {
+    "title": "build",
+    "meta": "node 22",
+    "prompt": "$",
+    "lines": [
+      "$ node scripts/build-preview.mjs",
+      "  hero              5.1 kB",
+      "  contributions    18.4 kB",
+      "  gauge             7.2 kB",
+      "  40 file(s) -> preview/",
+      "$ "
+    ]
+  },
+
+  "timeline": [
+    { "when": "AUG 2026", "what": "Twenty components, one grid", "note": "v1.1.0" },
+    { "when": "JUL 2026", "what": "Lifted out of a profile README and documented", "note": "v1.0.0" },
+    { "when": "JUN 2026", "what": "The 6% sizing rule, after everything collided", "note": "" },
+    { "when": "MAY 2026", "what": "First panel: a bitmap face and a 2px border", "note": "" }
+  ],
+
+  "progress": [
+    { "label": "COMPONENTS", "pct": 100 },
+    { "label": "DOCUMENTED", "pct": 100 },
+    { "label": "PHONE LAYOUTS", "pct": 92 },
+    { "label": "REDUCED MOTION", "pct": 100 },
+    { "label": "TESTS", "pct": 45 }
+  ],
+
+  "gauge": [
+    { "label": "COLOUR BUDGET", "value": 19, "max": 100, "display": "19%", "maxLabel": "100", "note": "blue, against a 20% ceiling" },
+    { "label": "PAGE WEIGHT", "value": 214, "max": 500, "display": "214", "maxLabel": "500", "note": "kB of SVG, whole gallery" }
+  ],
+
+  "ticker": {
+    "sep": "//",
+    "items": [
+      "No build step",
+      "No runtime",
+      "No package manager",
+      "One 2px grid",
+      "One embedded face",
+      "Both themes in every file"
+    ]
+  },
+
+  "table": {
+    "title": "sizes",
+    "meta": "measured",
+    "head": ["WHERE", "WIDTH", "TYPE", "SHARE"],
+    "align": ["start", "end", "end", "end"],
+    "rows": [
+      ["Profile README column", "831 px", "11 px", "1.3%"],
+      ["Full panel", "820 px", "11 px", "1.3%"],
+      ["Half panel", "404 px", "22 px", "5.4%"],
+      ["Readout cell", "208 px", "11 px", "5.3%"],
+      ["Phone column", "284 px", "11 px", "3.9%"]
+    ]
+  },
+
+  "tiles": [
+    { "label": "SHIPPED", "value": "4 tools", "note": "MIT" },
+    { "label": "OBSERVED", "value": "28 days" },
+    { "label": "PEAK", "value": "29", "note": "Aug 14" },
+    { "label": "STREAK", "value": "11 days" }
+  ],
+
+  "quote": {
+    "text": "A model can hold the context. It cannot hold the responsibility.",
+    "by": "the reason for the loop"
+  },
+
+  "contact": [
+    { "key": "email", "label": "EMAIL", "href": "mailto:you@example.com", "enabled": true },
+    { "key": "site", "label": "WEBSITE", "href": "https://example.com", "enabled": true },
+    { "key": "mastodon", "label": "MASTODON", "href": "https://example.social/@you", "enabled": true }
+  ],
+
+  "fortunes": [
+    "The tool you keep meaning to build is the one you need most.",
+    "A system nobody can explain is a system nobody can fix.",
+    "Good defaults beat good documentation.",
+    "Name it badly and you will build it badly.",
+    "Two hours of naming things saves two weeks of explaining them."
+  ],
+
+  "_motionNote": "Per-component switches. `ambient: false` keeps entrances but stops the never-ending effects; `enabled: false` makes everything static. No effect may start from opacity 0 — see scripts/lib/motion.mjs for why.",
+  "motion": {
+    "enabled": true,
+    "ambient": true,
+    "hero": true,
+    "about": true,
+    "sections": true,
+    "work": true,
+    "rhythm": true,
+    "languages": true,
+    "stars": true,
+    "activity": true,
+    "contributions": true,
+    "contributionStyle": "pixel",
+    "contributionPeriod": 3000,
+    "fortune": true,
+    "display": true,
+    "tiles": true,
+    "quote": true,
+    "terminal": true,
+    "timeline": true,
+    "progress": true,
+    "gauge": true,
+    "ticker": true,
+    "table": true
+  }
+}
